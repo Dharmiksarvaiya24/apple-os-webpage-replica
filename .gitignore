@@ -1,0 +1,10 @@
+# Root ignores
+.vscode/
+.DS_Store
+node_modules/
+package-lock.json
+
+# Frontend build artifacts
+Frontend/node_modules/
+Frontend/dist/
+Frontend/.DS_Store
