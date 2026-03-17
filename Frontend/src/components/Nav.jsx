@@ -15,35 +15,32 @@ export default function Nav() {
           <li className="cursor-pointer hover:text-slate-700 transition-colors">iPhone</li>
           <li className="cursor-pointer hover:text-slate-700 transition-colors">Watch</li>
         </ul>
-        <div className="flex items-center gap-4 text-slate-500">
+        <div className="flex items-center gap-6 text-slate-500">
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             viewBox="0 0 24 24"
-            strokeWidth={1.5}
+            fill="none"
             stroke="currentColor"
+            strokeWidth={1.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="h-5 w-5"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M5 9h14l1 11H4L5 9zm6 0V6a3 3 0 0 1 6 0v3"
-            />
-            <path strokeLinecap="round" strokeLinejoin="round" d="M11 12h2" />
+            <path d="M6 9h12l1.2 8H4.8L6 9z" />
+            <path d="M8 9V7a4 4 0 0 1 8 0v2" />
+            <path d="M11.5 13h1" />
           </svg>
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="none"
             viewBox="0 0 24 24"
-            strokeWidth={1.5}
+            fill="none"
             stroke="currentColor"
+            strokeWidth={1.5}
+            strokeLinecap="round"
+            strokeLinejoin="round"
             className="h-5 w-5"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-            />
+            <path d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
           </svg>
         </div>
       </div>
