@@ -14,6 +14,7 @@ Boilerplate for an Apple-inspired marketing page built with **React + Vite** and
 - `src/App.jsx` – clean shell showing just `hello` with Tailwind utility classes.
 - `src/index.css` – imports Tailwind directives plus base resets for the future design language.
 - `src/components/ui/` – reusable UI primitives (cards, buttons) with placeholders ready for later implementation.
+- `src/pages/` – page-level placeholders (home, product, mobile, fallback) that will host the assembled sections.
 - `src/sections/hero/` – hero section slots (split, immersive media, etc.) that will host Apple-style layouts.
 - `src/sections/features/` – feature grids, highlights, and callouts grouped together for a scalable layout system.
 - `src/animations/scroll/` – scroll-trigger and motion helpers for parallax/scroll reveal animations.
