@@ -1,7 +1,7 @@
 export default function Nav() {
   return (
    <nav className="w-full h-10 ">
-      <div className="mx-auto flex max-w-6xl items-center">
+      <div className="mx-auto flex max-w-6xl items-center items-center pl-[20px] pr-[20px]">
         <img src="https://www.freeiconspng.com/thumbs/apple-logo-icon/apple-icon-27.png" alt="Apple Logo" className="h-4 mt-2 ml-[130px]" />
         <ul className="flex space-x-6 text-xs mt-2 ml-8 font-thin pl-2 pr-2">
           <li className="hover:text-gray-500 cursor-pointer">Store</li>
@@ -43,6 +43,16 @@ export default function Nav() {
           </svg>
         </div>
       </div>
+       <div className="h-14 w-full mt-5 display-flex justify-center items-center">
+          <div className="flex space-x-5 text-xs display-flex justify-center items-center">
+            <button className="p-4 border-2 border-slate-500 rounded-full  w-[80px] h-[10px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120 ">Overview</button>
+            <button className="p-4 border-2 border-slate-500 rounded-full  w-[50px] h-[10px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120">iOS</button>
+            <button className="p-4 border-2 border-slate-500 rounded-full  w-[80px] h-[10px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120">macOS</button>
+            <button className="p-4 border-2 border-slate-500 rounded-full  w-[80px] h-[10px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120">iPadOS</button>
+            <button className="p-4 border-2 border-slate-500 rounded-full  w-[80px] h-[10px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120">WatchOS</button>
+         </div>
+       </div>
    </nav>
+
   )
 }
