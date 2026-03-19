@@ -45,7 +45,7 @@ export default function Nav() {
       </div>
        <div className="h-14 w-full mt-5 display-flex justify-center items-center">
           <div className="flex space-x-5 text-xs display-flex justify-center items-center">
-            <button className="p-4 border-2 border-slate-500 rounded-full  w-[80px] h-[10px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120 ">Overview</button>
+            <button className="p-4 border-2 border-slate-500 rounded-full  w-[80px] h-[10px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120 bg-[#000000] text-white">Overview</button>
             <button className="p-4 border-2 border-slate-500 rounded-full  w-[50px] h-[10px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120">iOS</button>
             <button className="p-4 border-2 border-slate-500 rounded-full  w-[80px] h-[10px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120">macOS</button>
             <button className="p-4 border-2 border-slate-500 rounded-full  w-[80px] h-[10px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120">iPadOS</button>
