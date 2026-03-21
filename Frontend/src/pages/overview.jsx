@@ -35,25 +35,25 @@ export default function HomePage() {
   }, [])
 
   return (
-    <div className="min-h-[90vh] flex flex-col items-center justify-center text-lg mt-24  ">
-      <div className="max-w-2xl text-center">
-        <p className="font-semibold text-2xl">OS Overview</p>
-        <p className="mt-2 font-bold leading-[1] text-[60px]">
+    <div className="min-h-[90vh] flex w-full flex-col items-center justify-center text-xl mt-[200px] px-4 lg:text-lg lg:mt-24">
+      <div className="w-full max-w-5xl text-center">
+        <p className="font-semibold text-3xl md:text-[60px] lg:text-[40px]">OS Overview</p>
+        <p className="mt-3 font-bold leading-[1] text-[72px] lg:mt-2 lg:text-[60px] md:text-[70px] md:mt-5">
           Stunning design.
           <br />
           Stellar experiences.
         </p>
-        <div className="mt-5 flex flex-col gap-3 text-[15px] font-light leading-[1.5] text-gray-600 items-center text-center">
+        <div className="mt-6 flex flex-col gap-4 text-[19px] font-light leading-[1.6] text-gray-600 items-center text-center lg:mt-5 lg:gap-3 lg:text-[15px] lg:leading-[1.5] md: text-[35px] md:mt-8">
           <p>
             Introducing our broadest design update ever, a more helpful Apple Intelligence and exciting features
             available on iOS 26, iPadOS 26, macOS Tahoe, watchOS 26 and tvOS 26.
           </p>
-          <div className="flex items-center gap-2 text-[15px] font-light">
-            <h6 className="text-blue-600 mt-4">Watch the event</h6>
-            <span className="text-lg text-blue-600 mt-4">›</span>
+          <div className="flex items-center gap-3 text-[19px] font-light lg:gap-2 lg:text-[15px]">
+            <h6 className="text-blue-600 mt-5 cursor-pointer lg:mt-4  md:text-[35px] md:mt-8 lg:text-[15px]">Watch the event</h6>
+            <span className="text-[24px] text-blue-600 mt-5 lg:mt-4 lg:text-lg">›</span>
           </div>
         </div>
-        <div className="mt-8  w-full gap-4 md:grid-cols-2">
+        <div className="mt- w-full gap-4 md:grid-cols-2 lg:mt-8 lg:gap-6 lg:grid-cols-1 ">
           {videoSources.map((src, index) => (
             <div key={`${src}-${index}`} className="overflow-hidden  ">
               <video
@@ -62,34 +62,34 @@ export default function HomePage() {
                 muted
                 loop
                 playsInline
-                className="h-90 w-full object-cover"
+                className="md:h-[600px] w-full  lg:h-100"
               />
             </div>
           ))}
         </div>
       </div>
-     <div className="w-full bg-[#f6f6f8] px-6 py-4 h-[200vh]">
-        <div className="bg-red-100 w-[90%] ml-[60px] mt-[80px] rounded-[40px]">
-          <div className="flex h-[300px] flex-col justify-between rounded-[40px] bg-white px-8 py-6  md:flex-row">
-            <div className="flex flex-1 flex-col justify-between text-[30px] font-semibold text-[#000000]">
-              <p className="leading-tight mt-[50px] ml-[50px]">
-                A Quick recap of what we <br /> announced at WWDC25.
-              </p>
-              <span className="text-xs font-light text-blue-600 mb-[100px] ml-[50px]">Watch the film ›</span>
-            </div>
-            <div className="flex w-full max-w-[390px] items-center justify-center mr-[100px] mb-[50px]">
-              <div className="aspect-[0/0] w-full overflow-hidden ">
+     <div className="w-full bg-[#f6f6f8] px-4 py-6 h-[200vh] lg:px-6 lg:py-4">
+        <div className="mx-auto mt-[100px] w-full max-w-6xl rounded-[48px] bg-red-100 lg:mt-[80px] lg:rounded-[40px]">
+          <div className="flex h-[420px] flex-col items-center justify-between rounded-[48px] bg-white px-6 py-8 text-center md:flex-col lg:flex-row lg:h-[300px] lg:items-stretch lg:rounded-[40px] lg:px-8 lg:py-6 lg:text-left">
+         <div className="order-1 flex w-full max-w-[390px] items-center justify-center mb-6 lg:order-2 lg:mr-[100px] lg:mb-[50px]">
+              <div className="w-full overflow-hidden rounded-[32px] lg:rounded-[40px]">
                 <img
                   src="./src/assets/wwdc.png"
                   alt="Recap backdrop"
-                  className="h-full w-full rounded-[34px] object-cover"
+                  className="h-full w-full object-cover object-center"
                 />
               </div>
             </div>
+            <div className="order-2 flex flex-1 flex-col items-center justify-between text-[40px] font-semibold text-[#000000] lg:order-1 lg:items-start lg:text-[30px]">
+              <p className="mt-[10px] leading-tight lg:mt-[50px] lg:ml-[50px]">
+                A Quick recap of what we <br /> announced at WWDC25.
+              </p>
+              <span className="mb-[20px] text-lg font-light text-blue-600 lg:mb-[100px] lg:ml-[50px] lg:text-xs">Watch the film ›</span>
+            </div>
           </div>
         </div>
-          <div className=' w-[90%] ml-[70px] mt-[150px] text-bold font-bold text-[#000000] '>
-             <p className=' text-[50px] font-medium text-[#000000] '>Get the highlights.</p>
+          <div className='mx-auto mt-[170px] w-full max-w-6xl text-bold font-bold text-[#000000] lg:mt-[150px]'>
+             <p className='text-[62px] font-medium text-[#000000] lg:text-[50px]'>Get the highlights.</p>
             </div>
       
       </div>

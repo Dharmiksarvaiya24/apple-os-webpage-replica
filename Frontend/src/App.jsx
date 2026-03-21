@@ -3,7 +3,7 @@ import Overview from './pages/overview.jsx'
 
 export default function App() {
   return (
-    <div>
+    <div className="min-h-screen w-full overflow-x-hidden bg-white">
       <Nav />
       <Overview />
     </div>
