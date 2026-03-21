@@ -1,7 +1,9 @@
 import { useEffect, useRef } from 'react'
+import wwdcImage from '../assets/wwdc.png'
+import overviewVideo from '../assets/media/overview.mov'
 
 const videoSources = [
-  '/src/assets/media/overview.mov',
+  overviewVideo,
   
 ]
 
@@ -74,7 +76,7 @@ export default function HomePage() {
          <div className="order-1 flex w-full max-w-[390px] items-center justify-center mb-6 lg:order-2 lg:mr-[100px] lg:mb-[50px]">
               <div className="w-full overflow-hidden rounded-[32px] lg:rounded-[40px]">
                 <img
-                  src="./src/assets/wwdc.png"
+                  src={wwdcImage}
                   alt="Recap backdrop"
                   className="h-full w-full object-cover object-center"
                 />
