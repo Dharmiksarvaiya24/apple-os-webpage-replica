@@ -1,14 +1,29 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import wwdcImage from '../assets/wwdc.png'
 import overviewVideo from '../assets/media/overview.mov'
+import h1 from '../assets/media/h1.png'
+import h2 from '../assets/media/h2.mov'
+import h3 from '../assets/media/h3.png'
+import h4 from '../assets/media/h4.mov'
+import h5 from '../assets/media/h5.png'
+
 
 const videoSources = [
   overviewVideo,
-  
+]
+
+const highlightSlides = [
+  { type: 'image', src: h1 },
+  { type: 'video', src: h2 },
+  { type: 'image', src: h3 },
+  { type: 'video', src: h4 },
+  { type: 'image', src: h5 },
 ]
 
 export default function HomePage() {
   const videosRef = useRef([])
+  const highlightVideosRef = useRef([])
+  const [activeSlide, setActiveSlide] = useState(0)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,8 +51,33 @@ export default function HomePage() {
     }
   }, [])
 
+  useEffect(() => {
+    const sliderInterval = window.setInterval(() => {
+      setActiveSlide((currentSlide) => (currentSlide + 1) % highlightSlides.length)
+    }, 4000)
+
+    return () => {
+      window.clearInterval(sliderInterval)
+    }
+  }, [])
+
+  useEffect(() => {
+    highlightVideosRef.current.forEach((video, index) => {
+      if (!video) {
+        return
+      }
+
+      if (index === activeSlide) {
+        video.currentTime = 0
+        video.play().catch(() => {})
+      } else {
+        video.pause()
+      }
+    })
+  }, [activeSlide])
+
   return (
-    <div className="min-h-[90vh] flex w-full flex-col items-center justify-center text-xl mt-[200px] px-4 lg:text-lg lg:mt-24">
+    <div className="min-h-[90vh] flex w-full flex-col items-center justify-center text-xl mt-[200px]  lg:text-lg lg:mt-24">
       <div className="w-full max-w-5xl text-center">
         <p className="font-semibold text-3xl md:text-[60px] lg:text-[40px]">OS Overview</p>
         <p className="mt-3 font-bold leading-[1] text-[72px] lg:mt-2 lg:text-[60px] md:text-[70px] md:mt-5">
@@ -70,7 +110,7 @@ export default function HomePage() {
           ))}
         </div>
       </div>
-     <div className="w-full bg-[#f6f6f8] px-4 py-6 h-[200vh] lg:px-6 lg:py-4">
+     <div className="w-fullc h-[179vh] lg:px-6 lg:py-4">
         <div className="mx-auto mt-[100px] w-full max-w-6xl rounded-[48px] bg-red-100 lg:mt-[80px] lg:rounded-[40px]">
           <div className="flex h-[420px] flex-col items-center justify-between rounded-[48px] bg-white px-6 py-8 text-center md:flex-col lg:flex-row lg:h-[300px] lg:items-stretch lg:rounded-[40px] lg:px-8 lg:py-6 lg:text-left">
          <div className="order-1 flex w-full max-w-[390px] items-center justify-center mb-6 lg:order-2 lg:mr-[100px] lg:mb-[50px]">
@@ -92,8 +132,54 @@ export default function HomePage() {
         </div>
           <div className='mx-auto mt-[170px] w-full max-w-6xl text-bold font-bold text-[#000000] lg:mt-[150px]'>
              <p className='text-[62px] font-medium text-[#000000] lg:text-[50px]'>Get the highlights.</p>
+               <div className="mt-[100px] w-full overflow-hidden rounded-[32px] lg:rounded-[40px]">
+                <div
+                  className="flex transition-transform duration-500 ease-out"
+                  style={{ transform: `translateX(-${activeSlide * 100}%)` }}
+                >
+                  {highlightSlides.map((slide, index) => (
+                    <div key={`${slide.src}-${index}`} className="w-full shrink-0">
+                      {slide.type === 'video' ? (
+                        <video
+                          ref={(element) => (highlightVideosRef.current[index] = element)}
+                          src={slide.src}
+                          muted
+                          loop
+                          playsInline
+                          className="h-full w-full object-cover object-center"
+                        />
+                      ) : (
+                        <img
+                          src={slide.src}
+                          alt={`Highlight slide ${index + 1}`}
+                          className="h-full w-full object-cover object-center"
+                        />
+                      )}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-6 flex items-center justify-center gap-3">
+                  {highlightSlides.map((_, index) => (
+                    <button
+                      key={`navigator-${index}`}
+                      type="button"
+                      aria-label={`Go to slide ${index + 1}`}
+                      onClick={() => setActiveSlide(index)}
+                      className={`h-3 w-3 rounded-full transition-colors ${
+                        activeSlide === index ? 'bg-black' : 'bg-gray-300'
+                      }`}
+                    />
+                  ))}
+                  <span className="ml-4 text-sm font-medium text-gray-500">
+                    {activeSlide + 1} / {highlightSlides.length}
+                  </span>
+                </div>
+              </div>
             </div>
-      
+          
+          <div className='relative left-1/2 right-1/2 -mx-[50vw] mt-[150px] h-[80vh] w-screen  bg-[#f6f6f8] lg:mt-[100px]'>
+                <h5 className='ml-20 mt-[30px]'>Apple Intelligence</h5>
+          </div>
       </div>
     </div>
     
