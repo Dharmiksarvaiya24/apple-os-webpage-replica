@@ -72,7 +72,7 @@ export default function Nav() {
           <li className="hover:text-gray-500 cursor-pointer">Support</li>
         </ul>
       )}
-       <div className="sticky top-0 z-40 h-36 w-full bg-white lg:mt-8 lg:h-14 lg:ml-[400px] md:mt-10">
+       <div className="sticky top-0 z-40 h-36 w-full overflow-x-auto overflow-y-hidden bg-white [-webkit-overflow-scrolling:touch] lg:mt-8 lg:h-14 lg:ml-[400px]">
           <div className="flex min-w-max items-center gap-5 px-8 text-2xl lg:gap-8 lg:text-xs">
             <button className="shrink-0 p-8 border-2 border-slate-500 rounded-full w-[180px] h-[78px] inline-flex items-center justify-center border-[1px] border-slate-120 bg-[#000000] text-white lg:w-[80px] lg:h-[10px] lg:p-4">Overview</button>
             <button className="shrink-0 p-8 border-2 border-slate-500 rounded-full w-[140px] h-[78px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120 lg:w-[50px] lg:h-[10px] lg:p-4">iOS</button>
