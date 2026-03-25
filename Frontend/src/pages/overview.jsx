@@ -214,7 +214,7 @@ function AppleIntelligenceShowcase({ section }) {
 
   return (
     <div
-      className="relative left-1/2 right-1/2 -mx-[50vw] mt-[150px] w-screen overflow-hidden bg-[#f6f6f8] px-5 py-16 sm:px-8 md:px-12 lg:mt-[100px] lg:px-16 lg:py-24"
+      className="relative left-1/2 right-1/2 -mx-[50vw] mt-[110px] w-screen overflow-hidden bg-[#f6f6f8] px-4 py-12 sm:px-8 sm:py-16 md:px-12 lg:mt-[100px] lg:px-16 lg:py-24"
       style={{
         backgroundImage:
           'linear-gradient(180deg, rgba(255,255,255,0.58) 0%, rgba(255,255,255,0) 18%), radial-gradient(circle at 15% 20%, rgba(255,255,255,0.9) 0%, rgba(246,246,248,0) 40%), radial-gradient(circle at 85% 15%, rgba(186,214,255,0.28) 0%, rgba(246,246,248,0) 28%), radial-gradient(circle at 82% 82%, rgba(255,205,228,0.22) 0%, rgba(246,246,248,0) 22%)',
@@ -228,19 +228,19 @@ function AppleIntelligenceShowcase({ section }) {
         {/* Header copy */}
         <div className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
-            <p className="text-[18px] font-semibold tracking-[-0.03em] text-[#1d1d1f] sm:text-[22px]">
+            <p className="text-[16px] font-semibold tracking-[-0.03em] text-[#1d1d1f] sm:text-[22px]">
               {section.label}
             </p>
-            <h2 className="mt-4 max-w-2xl text-[48px] font-semibold leading-[0.95] tracking-[-0.06em] text-[#1d1d1f] sm:text-[64px] lg:text-[86px]">
+            <h2 className="mt-3 max-w-2xl text-[38px] font-semibold leading-[0.98] tracking-[-0.06em] text-[#1d1d1f] sm:mt-4 sm:text-[64px] sm:leading-[0.95] lg:text-[86px]">
               {section.title}
             </h2>
-            <p className="mt-6 max-w-2xl text-[18px] font-medium leading-[1.65] text-[#6e6e73] sm:text-[20px]">
+            <p className="mt-5 max-w-2xl text-[26px] font-medium leading-[1.6] text-[#6e6e73] sm:mt-6 sm:text-[30px] sm:leading-[1.65]">
               {section.description}
             </p>
           </div>
 
           {/* Arrow buttons */}
-          <div className="flex items-center gap-3 lg:pb-3">
+          <div className="hidden items-center gap-3 sm:flex lg:pb-3">
             <button
               type="button"
               aria-label="Scroll carousel left"
@@ -263,21 +263,21 @@ function AppleIntelligenceShowcase({ section }) {
         </div>
 
         {/* Scrollable cards */}
-        <div className="relative mt-16">
+        <div className="relative mt-10 sm:mt-14 lg:mt-16">
           <div className="pointer-events-none absolute inset-y-0 left-0 z-10 hidden w-12 bg-gradient-to-r from-[#f6f6f8] to-transparent lg:block" />
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 hidden w-12 bg-gradient-to-l from-[#f6f6f8] to-transparent lg:block" />
 
           <div
             ref={intelligenceCarouselRef}
-            className="apple-intelligence-carousel flex snap-x snap-mandatory gap-6 overflow-x-auto scroll-smooth pb-4"
+            className="apple-intelligence-carousel flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-4 sm:gap-6"
           >
             {section.cards.map((card) => (
               <article
                 key={card.title}
                 data-apple-card
-                className="flex min-h-[520px] shrink-0 snap-start basis-[88%] flex-col rounded-[32px] border border-white/80 bg-white/80 p-5 shadow-[0_24px_70px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:basis-[72%] sm:p-6 lg:basis-[42%] xl:basis-[32%]"
+                className="flex min-h-[440px] shrink-0 snap-start basis-[90%] flex-col rounded-[28px] border border-white/80 bg-white/80 p-4 shadow-[0_24px_70px_rgba(15,23,42,0.08)] backdrop-blur-xl sm:min-h-[500px] sm:basis-[72%] sm:rounded-[32px] sm:p-6 lg:min-h-[520px] lg:basis-[42%] xl:basis-[32%]"
               >
-                <div className="relative flex h-[280px] items-center justify-center overflow-hidden rounded-[28px] bg-gradient-to-br from-white via-[#f6f8fc] to-[#eef2f8] sm:h-[320px]">
+                <div className="relative flex h-[220px] items-center justify-center overflow-hidden rounded-[24px] bg-gradient-to-br from-white via-[#f6f8fc] to-[#eef2f8] sm:h-[320px] sm:rounded-[28px]">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.92),rgba(255,255,255,0))]" />
                   <img
                     src={card.image}
@@ -288,14 +288,14 @@ function AppleIntelligenceShowcase({ section }) {
                 </div>
 
                 {/* Card text */}
-                <div className="mt-6 flex flex-1 flex-col px-1">
-                  <h3 className="text-[28px] font-semibold leading-tight tracking-[-0.04em] text-[#1d1d1f]">
+                <div className="mt-5 flex flex-1 flex-col px-1 sm:mt-6">
+                  <h3 className="text-[22px] font-semibold leading-tight tracking-[-0.04em] text-[#1d1d1f] sm:text-[28px]">
                     {card.title}
                   </h3>
-                  <p className="mt-3 text-[17px] font-light leading-[1.65] text-[#6e6e73]">
+                  <p className="mt-3 text-[15px] font-light leading-[1.55] text-[#6e6e73] sm:text-[17px] sm:leading-[1.65]">
                     {card.description}
                   </p>
-                  <p className="mt-auto pt-6 text-sm font-light text-[#8b8b91] whitespace-pre-line">{card.caption}</p>
+                  <p className="mt-auto whitespace-pre-line pt-5 text-[13px] font-light text-[#8b8b91] sm:pt-6 sm:text-sm">{card.caption}</p>
                 </div>
               </article>
             ))}
@@ -473,9 +473,26 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-
           <AppleIntelligenceShowcase section={firstAppleIntelligenceContent} />
           <AppleIntelligenceShowcase section={secondAppleIntelligenceContent} />
+
+            <div className='mb-[150px] sm:h-[30vh] lg:h-[70vh] mt-[100px] flex items-center justify-center px-4 lg:mt-[150px]'>
+                  <div className=' h-auto w-full max-w-[1000px] rounded-[28px] bg-gray-50 sm:w-[600px] lg:w-[1000px]  sm:rounded-[32px] lg:h-[500px] lg:rounded-[40px] '>
+                    <h1 className=' text-[34px] font-medium text-gray-800 mt-[50px] ml-[24px] sm:mt-[70px] sm:ml-[32px] sm:text-[42px] lg:mt-[150px] lg:ml-[50px] lg:text-[50px]'>
+                     Cards
+                    </h1>
+                    <p className=' flex items-center justify-center pb-[50px] pr-[24px] text-[26px] text-gray-600 ml-[24px]  sm:mt-[32px]  sm:ml-[32px] sm:pr-[32px] sm:text-[30px] lg:mt-[50px] lg:ml-[50px] lg:w-[80%] lg:pb-0 lg:pr-0'>
+                      Same Repeated Card Component with different content. Only the content and image URL changes, rest of the design and structure remains the same. This is how we can easily maintain consistency across the website and also make it easier to update in the future.
+                    </p>
+               </div>
+          </div>
+
+          <div className='flex min-h-[56vh] flex-col items-center bg-gray-50 px-4 text-center sm:min-h-[30vh]'>
+
+              <img src="https://www.apple.com/v/os/c/images/shared/routers/icon_sdk__cey3z4zk07rm_large_2x.png" alt="Recap backdrop" className="  flex h-[80px] w-[80px] items-center justify-center sm:mt-[200px] lg:mt-[100px] sm:h-[100px] sm:w-[100px]" />
+              <h1 className='mt-8 w-full max-w-[500px] px-2 text-[26px] font-medium leading-tight text-gray-800 sm:px-4 sm:text-[42px] lg:text-[50px]'>There’s plenty to love for developers too. </h1>
+              <h4 className='color-blue-500 mt-4 underline mb-[100px] cursor-pointer'>Learn more </h4>
+          </div>
         </div>
       </div>
     </>
