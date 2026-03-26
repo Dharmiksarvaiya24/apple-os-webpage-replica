@@ -1,4 +1,13 @@
 import { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+
+const pageLinks = [
+  { label: 'Overview', to: '/' },
+  { label: 'iOS', to: '/ios' },
+  { label: 'macOS', to: '/macos' },
+  { label: 'iPadOS', to: '/ipados' },
+  { label: 'WatchOS', to: '/watchos' },
+]
 
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -6,7 +15,9 @@ export default function Nav() {
   return (
    <nav className="w-full h-24 relative z-50 bg-white lg:h-10">
       <div className="mx-auto flex max-w-6xl items-center justify-between pl-[0px] pr-[0px] lg:justify-start ">
-        <img src="https://www.freeiconspng.com/thumbs/apple-logo-icon/apple-icon-27.png" alt="Apple Logo" className="h-[50px] ml-0 mt-4 md:ml-[50px] md:mt-[20px] lg:h-4 lg:ml-[130px] lg:mt-[10px]"/>
+        <NavLink to="/" className="block">
+          <img src="https://www.freeiconspng.com/thumbs/apple-logo-icon/apple-icon-27.png" alt="Apple Logo" className="h-[50px] ml-0 mt-4 md:ml-[50px] md:mt-[20px] lg:h-4 lg:ml-[130px] lg:mt-[10px]"/>
+        </NavLink>
         <ul className="hidden lg:flex space-x-6 text-xs mt-3 ml-8 font-thin pl-2 pr-2 h-4">
           <li className="hover:text-gray-500 cursor-pointer">Store</li>
           <li className="hover:text-gray-500 cursor-pointer">Mac</li>
@@ -73,12 +84,21 @@ export default function Nav() {
         </ul>
       )}
        <div className="sticky top-0 z-40 h-36 w-full overflow-x-auto overflow-y-hidden bg-white [-webkit-overflow-scrolling:touch] lg:mt-8 lg:h-14 lg:ml-[400px]">
-          <div className="flex min-w-max items-center gap-5 px-8 text-2xl lg:gap-8 lg:text-xs">
-            <button className="shrink-0 p-8 border-2 border-slate-500 rounded-full w-[180px] h-[78px] inline-flex items-center justify-center border-[1px] border-slate-120 bg-[#000000] text-white lg:w-[80px] lg:h-[10px] lg:p-4">Overview</button>
-            <button className="shrink-0 p-8 border-2 border-slate-500 rounded-full w-[140px] h-[78px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120 lg:w-[50px] lg:h-[10px] lg:p-4">iOS</button>
-            <button className="shrink-0 p-8 border-2 border-slate-500 rounded-full w-[180px] h-[78px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120 lg:w-[80px] lg:h-[10px] lg:p-4">macOS</button>
-            <button className="shrink-0 p-8 border-2 border-slate-500 rounded-full w-[180px] h-[78px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120 lg:w-[80px] lg:h-[10px] lg:p-4">iPadOS</button>
-            <button className="shrink-0 p-8 border-2 border-slate-500 rounded-full w-[180px] h-[78px] inline-flex items-center justify-center bg-gray-200 border-[1px] border-slate-120 lg:w-[80px] lg:h-[10px] lg:p-4">WatchOS</button>
+          <div className="flex min-w-max items-center gap-5 px-8 text-2xl lg:gap-8 lg:text-xs ml-[80px]">
+            {pageLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.to === '/'}
+                className={({ isActive }) =>
+                  `shrink-0 rounded-full border-[1px] border-slate-300 px-8 py-6 text-center text-black transition-colors lg:px-4 lg:py-2 ${
+                    isActive ? 'bg-black text-white' : 'bg-gray-200'
+                  }`
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
          </div>
        </div>
    </nav>
