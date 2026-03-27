@@ -411,7 +411,7 @@ export default function HomePage() {
           <div className="mx-auto mt-[100px] w-full max-w-6xl rounded-[48px] bg-red-100 lg:mt-[80px] lg:rounded-[40px]">
             <div className="flex h-[420px] flex-col items-center justify-between rounded-[48px] bg-white px-6 py-8 text-center md:flex-col lg:flex-row lg:h-[300px] lg:items-stretch lg:rounded-[40px] lg:px-8 lg:py-6 lg:text-left">
               <div className="order-1 flex w-full max-w-[390px] items-center justify-center mb-6 lg:order-2 lg:mr-[100px] lg:mb-[50px]">
-                <div className="w-full overflow-hidden rounded-[32px] lg:rounded-[40px]">
+                <div className="w-full overflow-hidden lg:rounded-[40px]">
                   <img
                     src={wwdcImage}
                     alt="Recap backdrop"
